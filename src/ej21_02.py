@@ -4,6 +4,10 @@ Escribir un programa que almacene la cadena de caracteres contraseña en una var
 """
 
 
+def almacenar_contraseña():
+
+
+
 def main():
 
 
@@ -13,3 +17,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
