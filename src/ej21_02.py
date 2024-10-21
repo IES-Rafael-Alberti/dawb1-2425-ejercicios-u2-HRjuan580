@@ -4,27 +4,25 @@ Escribir un programa que almacene la cadena de caracteres contraseña en una var
 """
 
 
-def almacenar_contraseña():
-    return "contraseña"
-
-
-def verificar_contraseña(contraseña_guardada, contraseña_usuario):
-    return contraseña_guardada.lower() == contraseña_usuario.lower()
+def verificar_contrasena(contrasena_guardada):
+    try:
+        contrasena_usuario = input("Introduce la contraseña: ")
+        if contrasena_usuario.lower() == contrasena_guardada.lower():
+            print("La contraseña es correcta.")
+        else:
+            print("La contraseña es incorrecta.")
+    
+    except Exception as e:
+        print("Ocurrió un error:", e)
 
 
 def main():
-    contraseña_guardada = almacenar_contraseña()
-    contraseña_usuario = input("Introduce la contraseña: ")
-    
-    if verificar_contraseña(contraseña_guardada, contraseña_usuario):
-        print("La contraseña es correcta.")
-    else:
-        print("La contraseña es incorrecta.")
+    contrasena = "contraseña123"
+    verificar_contrasena(contrasena)
 
 
 if __name__ == "__main__":
     main()
-
 
 
 
