@@ -1,7 +1,7 @@
 #Escribir un programa que pregunte al usuario su edad y muestre por pantalla todos los años que ha cumplido(desde1 hasta su edad).
 
 def validar_edad(edad; int):
-    if edad < 0:
+    if edad < 1:
         raise ValueError("La edad no puede ser negativa")
     if edad == 0:
         raise ValueError("La edad no puede ser 0")
@@ -10,9 +10,10 @@ def validar_edad(edad; int):
 
 
 def pedir_edad() -> int:
+    edad_correcta = False
     edad = None
 
-    while edad == None:
+    while not edad_correcta:
         try:
             edad = int(input("Introduce tu edad: "))
             validar_edad(edad)
