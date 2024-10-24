@@ -10,7 +10,7 @@ Escribir un programa que pida al usuario un número entero y muestre por pantall
 
 
 
-def pedir_numero(n):
+def pedir_numero():
     while True:
         try:
             n = int(input("Introduce un numero entero: "))
@@ -24,18 +24,21 @@ def pedir_numero(n):
 
 def construir_fila(inicio: int) -> str:
     for i in range(inicio, 0, -2):
-        fila += str
             
-
-
+            
 def triangulo_rectangulo(n: int) -> str:
-    cadena = ""
-    triangulo = ''
-    if num%2 != 0:
-        for i in range(1, n1, 2):
-            cadena += str(1) +
+    triangulo = ""
+    for in range(1, n + 1, 2):
+        triangulo += construir_fila(1) + "\n"
+    return triangulo
 
+def hacer_piramide(n: int) -> str:
+    resto = (n % 2)
+    i = None
+    piramide = ""
+    secuencia = ""
 
+    
             
             
 def main():
