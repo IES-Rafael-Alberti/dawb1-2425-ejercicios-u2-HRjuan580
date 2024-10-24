@@ -38,7 +38,7 @@ def hacer_piramide(n: int) -> str:
     piramide = ""
     secuencia = ""
 
-    
+
             
             
 def main():
