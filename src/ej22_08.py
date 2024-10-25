@@ -7,47 +7,38 @@ Escribir un programa que pida al usuario un número entero y muestre por pantall
 7 5 3 1
 9 7 5 3 1
 """
+# Hacer las 2 formas "Par o Impar".
 
+# Función principal para generar y mostrar el triángulo
+def generar_triangulo(n):
+    # Iteramos desde 0 hasta n-1 para crear cada fila
+    for i in range(n):
+        # Calcular el valor inicial para la fila actual
+        start = 2 * i + 1
+        # Crear una lista de números decrecientes
+        fila = [str(start - 2 * j) for j in range(i + 1)]
+        
+        # Mostrar la fila unida por espacios
+        print(" ".join(fila))
 
-
-def pedir_numero():
+# Solicitar al usuario un número entero
+def solicitar_numero():
     while True:
         try:
-            n = int(input("Introduce un numero entero: "))
+            n = int(input("Introduce un número entero positivo: "))
             if n > 0:
                 return n
             else:
-             print("Por favor, introduce un numero entero valido")
+                print("Por favor, introduce un número entero positivo.")
         except ValueError:
-            print("Entrada no valida. Hazlo de nuevo")
+            print("Entrada no válida. Inténtalo de nuevo.")
 
-
-def construir_fila(inicio: int) -> str:
-    for i in range(inicio, 0, -2):
-            
-            
-def triangulo_rectangulo(n: int) -> str:
-    triangulo = ""
-    for in range(1, n + 1, 2):
-        triangulo += construir_fila(1) + "\n"
-    return triangulo
-
-def hacer_piramide(n: int) -> str:
-    resto = (n % 2)
-    i = None
-    piramide = ""
-    secuencia = ""
-
-
-            
-            
+# Función principal que coordina el flujo del programa
 def main():
-    n = pedir_numero("Introduce un numero entero")
+    n = solicitar_numero()  # Llamar a la función para obtener un número
+    generar_triangulo(n)    # Generar y mostrar el triángulo
 
-
-
-
-
-
+# Ejecutar el programa
 if __name__ == "__main__":
     main()
+
