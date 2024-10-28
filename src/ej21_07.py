@@ -34,12 +34,11 @@ def main():
             impuesto = tipo_impositivo(renta)
             print(f'Tu tipo impositivo es: {impuesto}')
             
-            # Salimos del bucle si todo está bien
             break
+
         except ValueError as e:
             print(e)
         else:
-            # Este bloque se ejecuta si no hay excepción
             print("Consulta exitosa.")
 
 if __name__ == "__main__":
