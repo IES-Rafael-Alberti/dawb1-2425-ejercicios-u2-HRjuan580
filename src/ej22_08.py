@@ -7,38 +7,51 @@ Escribir un programa que pida al usuario un número entero y muestre por pantall
 7 5 3 1
 9 7 5 3 1
 """
-# Hacer las 2 formas "Par o Impar".
 
-# Función principal para generar y mostrar el triángulo
-def generar_triangulo(n):
-    # Iteramos desde 0 hasta n-1 para crear cada fila
-    for i in range(n):
-        # Calcular el valor inicial para la fila actual
-        start = 2 * i + 1
-        # Crear una lista de números decrecientes
-        fila = [str(start - 2 * j) for j in range(i + 1)]
+MAX_NUMERO = 20
+def comprobar_numero(numero): 
+    comprobacion = 100
+    bandera = True
         
-        # Mostrar la fila unida por espacios
-        print(" ".join(fila))
+    try:
+        comprobacion = int(numero)
+        if comprobacion < 0: 
+            raise ZeroDivisionError("*ERROR*\nIntroduce un número entero positivo")
+        if comprobacion > MAX_NUMERO:
+            raise ZeroDivisionError(f"*ERROR*\nLa piramide no puede ser mayor que {MAX_NUMERO}")
+         
+        
+    except ZeroDivisionError as e:
+            print(e)
+    return comprobacion
 
-# Solicitar al usuario un número entero
-def solicitar_numero():
-    while True:
-        try:
-            n = int(input("Introduce un número entero positivo: "))
-            if n > 0:
-                return n
-            else:
-                print("Por favor, introduce un número entero positivo.")
-        except ValueError:
-            print("Entrada no válida. Inténtalo de nuevo.")
+def pedir_numero():
+    return input("Introduce un número: ")
 
-# Función principal que coordina el flujo del programa
+def crear_triangulo(num):
+    print(generar_creciente(num))
+
+
+def generar_creciente(num: int) -> str:
+    serie = ""
+
+    for i in range(0, num, 1):
+        serie += f"{i} => "
+        total = 0
+        for j in range(0, i + 1):
+            total += j
+            serie += f"{j} + "
+        serie = serie[:-2] + f" = {total}\n"
+
+
+    return serie
+
 def main():
-    n = solicitar_numero()  # Llamar a la función para obtener un número
-    generar_triangulo(n)    # Generar y mostrar el triángulo
+    numero = pedir_numero()
+    numero = comprobar_numero(numero)
+    crear_triangulo(numero)
 
-# Ejecutar el programa
 if __name__ == "__main__":
     main()
+
 
