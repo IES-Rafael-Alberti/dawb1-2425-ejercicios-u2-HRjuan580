@@ -1,0 +1,26 @@
+"""
+Escribir un programa que pregunte al usuario su edad y muestre por pantalla todos los años que ha cumplido (desde 1 hasta su edad).
+"""
+
+def preguntar_edad():
+    while True: 
+        try:
+            edad = int(input("Por favor, ingrese su edad: "))
+            if edad < 1:
+                print("La edad debe ser un numero positivo. Intentelo de nuevo")
+                continue
+            return edad
+        except ValueError:
+            print("Numero no valido. Por favor ingrese un numero valido. ")
+
+def mostrar_anios(edad):
+    for anio in range(1, edad +1):
+        print(anio)
+
+def main():
+    edad = preguntar_edad()
+    print("Los años que has cumplido son:")
+    mostrar_anios(edad)
+
+if __name__ == "__main__":
+    main()
